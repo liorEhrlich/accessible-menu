@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Menu = ({ menuItems, isOpen }) => {
-  if (!isOpen) {
-    return null;
-  }
+const Menu = ({ header, menuItems }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <ul>
-      {menuItems.map(item => (
-        <li>{item}</li>
-      ))}
-    </ul>
+    <div role="menubar" aria-haspopup="true">
+      <button onClick={() => setIsMenuOpen(open => !open)}>{header}</button>
+
+      {isMenuOpen && (
+        <ul>
+          {menuItems.map(item => (
+            <li role="menuitem">{item}</li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 
