@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Menu from "./Menu";
 
 function App() {
   return (
@@ -10,6 +11,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Menu
+        header='menu'
+          menuItems={["add", "edit", "save", "delete"]}
+        />
         <a
           className="App-link"
           href="https://reactjs.org"
