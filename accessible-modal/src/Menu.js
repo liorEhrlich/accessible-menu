@@ -10,7 +10,7 @@ const Menu = ({ header, menuItems }) => {
       {isMenuOpen && (
         <ul>
           {menuItems.map(item => (
-            <li role="menuitem">{item}</li>
+            <li role="menuitem" tabIndex='0'>{item}</li>
           ))}
         </ul>
       )}
