@@ -4,7 +4,7 @@ const Menu = ({ header, menuItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div role="menubar" aria-haspopup="true">
+    <div role="menubar" aria-haspopup="true" aria-expanded={isMenuOpen}>
       <button onClick={() => setIsMenuOpen(open => !open)}>{header}</button>
 
       {isMenuOpen && (
